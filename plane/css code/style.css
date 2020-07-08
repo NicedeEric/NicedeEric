@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#game {
+    width: 460px;
+    height: 817px;
+    margin: 50px auto;
+}
+#gameStart{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg1.png);
+}
+#gameStart span {
+    width: 160px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 110px;
+    margin-left: -65px;
+    font-size: 24px;
+    border: 4px solid #edefea;
+    color: #edefea;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+#gameStart span:hover {
+    color: #6bc5d0;
+    border-color: #6bc5d0;
+}
+
+#gameEnter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg2.png);
+    display: none;
+}
+#myPlane {
+    position: absolute;
+    left: 190px;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+#myPlane img {
+    width: 100%;
+    height: 100%;
+}
+#bullets,#enemys {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+.b {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 8px;
+    height: 16px;
+}
+.e {
+    position: absolute;
+}
+#scores {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+    color: #fff;
+}
