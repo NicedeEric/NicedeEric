@@ -9,7 +9,7 @@
   // Leave as empty string to disable analytics tracking.
   // Example: "https://wzry-api.<your-subdomain>.workers.dev"
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  const API_BASE = (window.__API_BASE__ || "https://wzry-api.wzrypersona.workers.dev").replace(/\/$/, "");
+  const API_BASE = (window.__API_BASE__ || "").replace(/\/$/, "");
 
   const LS_VID = "wzry_vid";
   function getVisitorId() {
@@ -71,6 +71,7 @@
       });
     },
     getPublicStats() {
+      if (!API_BASE) return Promise.resolve(null);
       return fetch(API_BASE + "/api/public/stats")
         .then(r => r.ok ? r.json() : null)
         .catch(() => null);
@@ -80,9 +81,9 @@
     adminLogin(username, password) {
       return post("/api/admin/login", { username, password });
     },
-    adminStats(token) { return get("/api/admin/stats", token); },
-    adminHeroes(token) { return get("/api/admin/heroes", token); },
-    adminRecent(token) { return get("/api/admin/recent", token); },
+    adminStats(token)      { return get("/api/admin/stats", token); },
+    adminHeroes(token)     { return get("/api/admin/heroes", token); },
+    adminRecent(token)     { return get("/api/admin/recent", token); },
     adminTimeseries(token) { return get("/api/admin/timeseries", token); },
   };
 })();

@@ -4,55 +4,77 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 <meta name="theme-color" content="#1a0b2e" />
-<title>王者测试 · 你是哪位王者荣耀英雄？</title>
-<meta name="description" content="30 道题，测一测你是王者荣耀里的哪位英雄。" />
+<title>古今英雄测 · Which Historical Hero Are You?</title>
+<meta name="description" content="基于 60+ 位历史 / 神话公共领域人物的八维人格测试——看看你和哪位古今英雄灵魂共振。" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="王者测试 · 你是哪位王者荣耀英雄？" />
-<meta property="og:description" content="30 题性格测试，告诉你你是哪个英雄。" />
+<meta property="og:title" content="古今英雄测 · 你是哪位古今英雄？" />
+<meta property="og:description" content="八维人格 · 60+ 位历史英雄 · 每次随机 30 题。" />
 <meta property="og:type" content="website" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="./assets/css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
 <div class="bg-stars"></div>
 <div class="bg-glow"></div>
+<canvas id="bgParticles" class="bg-particles"></canvas>
+
+<!-- 古风图案背景 -->
+<div class="bg-ink"></div>
 
 <!-- ============ 欢迎页 ============ -->
 <section id="screen-intro" class="screen active">
   <div class="intro-wrap">
-    <div class="intro-crown">👑</div>
+    <div class="intro-seal">
+      <svg viewBox="0 0 100 100" class="seal-svg">
+        <defs>
+          <linearGradient id="sealGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffe4a1"/>
+            <stop offset="100%" stop-color="#c9941a"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="80" height="80" rx="8"
+              fill="none" stroke="url(#sealGrad)" stroke-width="2"/>
+        <rect x="16" y="16" width="68" height="68" rx="4"
+              fill="none" stroke="url(#sealGrad)" stroke-width="1" opacity=".5"/>
+        <text x="50" y="40" text-anchor="middle" fill="url(#sealGrad)"
+              font-size="18" font-weight="700" font-family="serif">古今</text>
+        <text x="50" y="65" text-anchor="middle" fill="url(#sealGrad)"
+              font-size="18" font-weight="700" font-family="serif">英雄</text>
+      </svg>
+    </div>
+
     <h1 class="intro-title">
-      <span class="intro-title-zh">王者测试</span>
-      <span class="intro-title-en">Which Honor of Kings Hero Are You?</span>
+      <span class="intro-title-zh">古 今 英 雄 测</span>
+      <span class="intro-title-en">Which Historical Hero Are You?</span>
     </h1>
-    <p class="intro-sub">30 道题 · 识你本心 · 对应召唤师峡谷中一位英雄</p>
+    <p class="intro-sub">八维人格 · 基于 60+ 位历史/神话人物 · 每次随机 30 题</p>
 
     <div class="intro-stat">
       <div class="stat-item">
-        <div class="stat-num" id="statTotal">—</div>
+        <div class="stat-num counter" id="statTotal">—</div>
         <div class="stat-label">累计测试</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-num">30</div>
-        <div class="stat-label">题目</div>
+        <div class="stat-num" id="statQuestions">—</div>
+        <div class="stat-label">题库</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-num">30+</div>
+        <div class="stat-num" id="statHeroes">—</div>
         <div class="stat-label">英雄</div>
       </div>
     </div>
 
-    <button class="btn-primary" id="btnStart">
-      <span>开 始 测 试</span>
+    <button class="btn-primary btn-large" id="btnStart">
+      <span>启 程 问 鼎</span>
       <span class="btn-arrow">→</span>
     </button>
 
-    <p class="intro-foot">匿名参与 · 仅作娱乐 · 数据保留 30 天</p>
+    <p class="intro-foot">匿名参与 · 访问数据保留 30 天</p>
   </div>
 </section>
 
@@ -70,7 +92,8 @@
     <h2 class="q-text" id="qText">问题加载中...</h2>
     <div class="q-options" id="qOptions"></div>
     <div class="quiz-foot">
-      <button class="btn-ghost" id="btnBack">← 上一题</button>
+      <button class="btn-ghost btn-sm" id="btnBack">← 上一题</button>
+      <button class="btn-ghost btn-sm btn-danger-ghost" id="btnRestart">↻ 重新开始</button>
     </div>
   </div>
 </section>
@@ -78,45 +101,145 @@
 <!-- ============ 计算中 ============ -->
 <section id="screen-loading" class="screen">
   <div class="loading-wrap">
-    <div class="loading-spinner"></div>
-    <div class="loading-text">正在召唤你的英雄...</div>
+    <div class="loading-rings">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="ring-core"></div>
+    </div>
+    <div class="loading-text">正在召唤你的英雄<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
   </div>
 </section>
 
 <!-- ============ 结果页 ============ -->
 <section id="screen-result" class="screen">
   <div class="result-wrap">
-    <div class="result-banner" id="resultBanner">
-      <div class="result-badge">你的英雄</div>
-      <div class="result-role" id="resRole">刺客</div>
-      <h2 class="result-name" id="resName">李白</h2>
-      <div class="result-title" id="resTitle">青莲剑仙</div>
-      <div class="result-quote" id="resQuote">"今朝有酒今朝醉"</div>
+
+    <!-- 书法风格英雄名片 -->
+    <div class="hero-card" id="heroCard">
+      <div class="hero-card-border">
+        <div class="hero-card-era" id="resEra">时代</div>
+        <div class="hero-card-badge">你的英雄</div>
+        <h2 class="hero-card-name" id="resName">
+          <span class="name-char"></span>
+        </h2>
+        <div class="hero-card-title" id="resTitle">称号</div>
+        <div class="hero-card-role" id="resRole">身份</div>
+        <div class="hero-card-quote" id="resQuote">台词</div>
+        <div class="hero-card-deco-top">❋</div>
+        <div class="hero-card-deco-bot">❋</div>
+      </div>
     </div>
 
     <div class="result-card">
+      <!-- 匹配度 + 特质 -->
+      <div class="match-score-line">
+        <span class="match-label">灵魂契合</span>
+        <span class="match-value" id="matchValue">—</span>
+      </div>
+
       <div class="result-traits" id="resTraits"></div>
-      <p class="result-desc" id="resDesc"></p>
 
-      <div class="radar-wrap">
-        <div class="radar-title">你的画像</div>
-        <canvas id="radar" width="300" height="300"></canvas>
+      <!-- 为什么是你 -->
+      <div class="result-section anim-slide">
+        <div class="section-title">为何是 <span id="matchName">这位</span>？</div>
+        <ul class="match-list" id="resMatch"></ul>
       </div>
 
-      <div class="result-top3">
-        <div class="top3-title">其他匹配</div>
-        <div class="top3-list" id="resTop3"></div>
+      <!-- 英雄背景（详细） -->
+      <div class="result-section anim-slide">
+        <div class="section-title">英雄背景</div>
+        <p class="result-lore" id="resLore"></p>
       </div>
 
+      <!-- 性格画像（详细） -->
+      <div class="result-section anim-slide">
+        <div class="section-title">性格画像</div>
+        <p class="result-personality" id="resPersonality"></p>
+      </div>
+
+      <!-- 8 维人格雷达 -->
+      <div class="result-section anim-slide">
+        <div class="section-title">你的八维人格</div>
+        <div class="dims-wrap" id="dimsWrap"></div>
+      </div>
+
+      <!-- 操作 -->
       <div class="result-actions">
-        <button class="btn-primary" id="btnShare">分享结果</button>
+        <button class="btn-primary" id="btnShare">📜 生成分享卷</button>
         <button class="btn-ghost" id="btnRetry">重新测试</button>
       </div>
     </div>
 
-    <p class="result-foot">© 王者测试 · 非官方趣味测试 · 英雄人物均为腾讯《王者荣耀》所有</p>
+    <p class="result-foot">© 古今英雄测 · 非商业趣味测试 · 人物原型均来自公共领域历史与神话</p>
   </div>
 </section>
+
+<!-- ============ 分享图画布 ============ -->
+<div id="shareCanvas" class="share-canvas">
+  <div class="share-inner">
+    <div class="share-border-outer">
+      <div class="share-border-inner">
+
+        <div class="share-header">
+          <div class="share-era" id="shareEra">时代</div>
+          <div class="share-deco">❦ 古 今 英 雄 测 ❦</div>
+        </div>
+
+        <div class="share-hero-block">
+          <div class="share-badge">我的人格对应</div>
+          <div class="share-hero-name" id="shareName">关羽</div>
+          <div class="share-hero-title" id="shareTitle">武圣</div>
+          <div class="share-hero-role" id="shareRole">三国 · 武神</div>
+          <div class="share-hero-quote" id="shareQuote"></div>
+        </div>
+
+        <div class="share-traits" id="shareTraits"></div>
+
+        <div class="share-desc" id="shareDesc"></div>
+
+        <div class="share-dims" id="shareDims"></div>
+
+        <div class="share-bottom">
+          <div class="share-bottom-left">
+            <div class="share-bottom-title">古今英雄测</div>
+            <div class="share-bottom-sub">扫码测你的人格英雄</div>
+            <div class="share-bottom-foot">八维人格 · 60+ 英雄 · 随机 30 题</div>
+          </div>
+          <div class="share-qr" id="shareQr"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 分享预览 ============ -->
+<div id="sharePreview" class="share-preview">
+  <div class="share-preview-inner">
+    <div class="share-preview-header">
+      <div>长按图片保存 · 截图分享</div>
+      <button class="share-preview-close" id="btnSharePreviewClose">✕</button>
+    </div>
+    <img id="sharePreviewImg" class="share-preview-img" />
+    <div class="share-preview-actions">
+      <button class="btn-primary" id="btnShareDownload">💾 下载图片</button>
+      <button class="btn-ghost" id="btnShareSystem">系统分享</button>
+    </div>
+  </div>
+</div>
+
+<!-- 确认对话框 -->
+<div id="confirmModal" class="confirm-modal">
+  <div class="confirm-inner">
+    <div class="confirm-icon">⚠</div>
+    <div class="confirm-title">确认要重新开始？</div>
+    <div class="confirm-text">当前答题进度会全部清空</div>
+    <div class="confirm-actions">
+      <button class="btn-ghost" id="btnConfirmCancel">取消</button>
+      <button class="btn-primary" id="btnConfirmOK">重新开始</button>
+    </div>
+  </div>
+</div>
 
 <script src="./assets/js/api.js"></script>
 <script src="./assets/js/app.js"></script>
