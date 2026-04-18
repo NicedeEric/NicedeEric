@@ -24,7 +24,7 @@ ADMIN_USERNAME = "admin"
 [[d1_databases]]
 binding = "DB"
 database_name = "wzry-db"
-database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+database_id = "72025b22-5531-45a2-b124-7251ac375afb"
 
 # Cron：每天 03:00 UTC 清理 30 天前的数据
 [triggers]

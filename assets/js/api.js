@@ -9,7 +9,7 @@
   // Leave as empty string to disable analytics tracking.
   // Example: "https://wzry-api.<your-subdomain>.workers.dev"
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  const API_BASE = (window.__API_BASE__ || "").replace(/\/$/, "");
+  const API_BASE = (window.__API_BASE__ || "https://wzry-api.wzrypersona.workers.dev").replace(/\/$/, "");
 
   const LS_VID = "wzry_vid";
   function getVisitorId() {
