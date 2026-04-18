@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="theme-color" content="#1a0b2e" />
+<title>王者测试 · 你是哪位王者荣耀英雄？</title>
+<meta name="description" content="30 道题，测一测你是王者荣耀里的哪位英雄。" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="王者测试 · 你是哪位王者荣耀英雄？" />
+<meta property="og:description" content="30 题性格测试，告诉你你是哪个英雄。" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+<div class="bg-stars"></div>
+<div class="bg-glow"></div>
+
+<!-- ============ 欢迎页 ============ -->
+<section id="screen-intro" class="screen active">
+  <div class="intro-wrap">
+    <div class="intro-crown">👑</div>
+    <h1 class="intro-title">
+      <span class="intro-title-zh">王者测试</span>
+      <span class="intro-title-en">Which Honor of Kings Hero Are You?</span>
+    </h1>
+    <p class="intro-sub">30 道题 · 识你本心 · 对应召唤师峡谷中一位英雄</p>
+
+    <div class="intro-stat">
+      <div class="stat-item">
+        <div class="stat-num" id="statTotal">—</div>
+        <div class="stat-label">累计测试</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">30</div>
+        <div class="stat-label">题目</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">英雄</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" id="btnStart">
+      <span>开 始 测 试</span>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <p class="intro-foot">匿名参与 · 仅作娱乐 · 数据保留 30 天</p>
+  </div>
+</section>
+
+<!-- ============ 答题页 ============ -->
+<section id="screen-quiz" class="screen">
+  <div class="quiz-top">
+    <div class="progress-text">
+      <span id="qIndex">1</span> / <span id="qTotal">30</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-label">第 <span id="qIndex2">1</span> 题</div>
+    <h2 class="q-text" id="qText">问题加载中...</h2>
+    <div class="q-options" id="qOptions"></div>
+    <div class="quiz-foot">
+      <button class="btn-ghost" id="btnBack">← 上一题</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 计算中 ============ -->
+<section id="screen-loading" class="screen">
+  <div class="loading-wrap">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">正在召唤你的英雄...</div>
+  </div>
+</section>
+
+<!-- ============ 结果页 ============ -->
+<section id="screen-result" class="screen">
+  <div class="result-wrap">
+    <div class="result-banner" id="resultBanner">
+      <div class="result-badge">你的英雄</div>
+      <div class="result-role" id="resRole">刺客</div>
+      <h2 class="result-name" id="resName">李白</h2>
+      <div class="result-title" id="resTitle">青莲剑仙</div>
+      <div class="result-quote" id="resQuote">"今朝有酒今朝醉"</div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-traits" id="resTraits"></div>
+      <p class="result-desc" id="resDesc"></p>
+
+      <div class="radar-wrap">
+        <div class="radar-title">你的画像</div>
+        <canvas id="radar" width="300" height="300"></canvas>
+      </div>
+
+      <div class="result-top3">
+        <div class="top3-title">其他匹配</div>
+        <div class="top3-list" id="resTop3"></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="btnShare">分享结果</button>
+        <button class="btn-ghost" id="btnRetry">重新测试</button>
+      </div>
+    </div>
+
+    <p class="result-foot">© 王者测试 · 非官方趣味测试 · 英雄人物均为腾讯《王者荣耀》所有</p>
+  </div>
+</section>
+
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/app.js"></script>
+</body>
+</html>

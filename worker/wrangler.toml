@@ -1,0 +1,31 @@
+# =================================================================
+# Cloudflare Worker 配置
+# 部署前请先：
+#   1) npx wrangler login
+#   2) npx wrangler d1 create wzry-db
+#      把命令输出的 database_id 填到下面的 [[d1_databases]] 里
+#   3) npx wrangler d1 execute wzry-db --remote --file=./schema.sql
+#   4) npx wrangler secret put JWT_SECRET
+#      npx wrangler secret put ADMIN_PASSWORD
+#   5) npx wrangler deploy
+# =================================================================
+name = "wzry-api"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+
+# 允许从浏览器发起请求的前端域名（CORS 白名单）
+# 部署前请改成你自己的 GitHub Pages 域名
+[vars]
+CORS_ORIGINS = "https://nicedeeric.github.io,http://localhost:8080,http://127.0.0.1:8080"
+ADMIN_USERNAME = "admin"
+# ADMIN_PASSWORD 和 JWT_SECRET 使用 `wrangler secret put` 设置，不要写在这里
+
+# D1 数据库（SQLite）
+[[d1_databases]]
+binding = "DB"
+database_name = "wzry-db"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+
+# Cron：每天 03:00 UTC 清理 30 天前的数据
+[triggers]
+crons = ["0 3 * * *"]

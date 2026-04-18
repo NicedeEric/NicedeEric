@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Admin · 王者测试看板</title>
+<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+<div class="bg-stars"></div>
+<div class="bg-glow"></div>
+
+<!-- ================ 登录 ================ -->
+<section id="loginScreen" class="screen active">
+  <div class="admin-login">
+    <h2>👑 管 理 登 录</h2>
+    <div class="admin-field">
+      <label>用户名</label>
+      <input type="text" id="adminUser" autocomplete="username" />
+    </div>
+    <div class="admin-field">
+      <label>密码</label>
+      <input type="password" id="adminPass" autocomplete="current-password" />
+    </div>
+    <button class="btn-primary" id="btnLogin">登 录</button>
+    <div class="admin-error" id="loginErr"></div>
+  </div>
+</section>
+
+<!-- ================ 看板 ================ -->
+<section id="dashScreen" class="screen">
+  <div class="admin-wrap">
+    <div class="admin-header">
+      <h1>访问看板</h1>
+      <div class="user-info">
+        <span id="adminName"></span>
+        <button class="btn-ghost" id="btnRefresh">刷新</button>
+        <button class="btn-ghost" id="btnLogout">退出</button>
+      </div>
+    </div>
+
+    <div class="admin-kpi">
+      <div class="kpi-card">
+        <div class="kpi-label">累计访问</div>
+        <div class="kpi-value" id="kpiTotalVisits">—</div>
+        <div class="kpi-sub">保留最近 30 天</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">独立访客 (UV)</div>
+        <div class="kpi-value" id="kpiUV">—</div>
+        <div class="kpi-sub">按匿名 visitor_id 去重</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">完成测试</div>
+        <div class="kpi-value" id="kpiResults">—</div>
+        <div class="kpi-sub">生成结果次数</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">今日访问</div>
+        <div class="kpi-value" id="kpiToday">—</div>
+        <div class="kpi-sub" id="kpiTodayTime">—</div>
+      </div>
+    </div>
+
+    <div class="admin-grid">
+      <div class="panel full">
+        <div class="panel-title">
+          <span>最近 30 天访问趋势</span>
+          <span style="font-size:11px;color:var(--grey-dim);letter-spacing:2px;">visits / day</span>
+        </div>
+        <canvas id="timeChart" class="time-chart"></canvas>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">英雄分布 TOP 15</div>
+        <div class="hero-bar-list" id="heroList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">最近结果</div>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../assets/js/api.js"></script>
+<script>
+(function(){
+  const LS_TOKEN = "wzry_admin_token";
+  const $ = (s) => document.querySelector(s);
+  const loginScreen = $("#loginScreen");
+  const dashScreen = $("#dashScreen");
+
+  function showLogin() {
+    loginScreen.classList.add("active");
+    dashScreen.classList.remove("active");
+  }
+  function showDash() {
+    loginScreen.classList.remove("active");
+    dashScreen.classList.add("active");
+  }
+
+  function getToken() { return localStorage.getItem(LS_TOKEN); }
+  function setToken(t) { localStorage.setItem(LS_TOKEN, t); }
+  function clearToken() { localStorage.removeItem(LS_TOKEN); }
+
+  async function login() {
+    const err = $("#loginErr");
+    err.textContent = "";
+    const user = $("#adminUser").value.trim();
+    const pass = $("#adminPass").value;
+    if (!user || !pass) { err.textContent = "请填写用户名和密码"; return; }
+    if (!window.WzryAPI.configured) {
+      err.textContent = "未配置后端 API（请先部署 Worker 并在 api.js 里设置 __API_BASE__）";
+      return;
+    }
+    const r = await window.WzryAPI.adminLogin(user, pass);
+    if (!r || !r.token) { err.textContent = (r && r.error) || "登录失败"; return; }
+    setToken(r.token);
+    $("#adminName").textContent = user;
+    showDash();
+    loadAll();
+  }
+
+  async function loadAll() {
+    const token = getToken();
+    if (!token) return showLogin();
+    const [s, h, r, t] = await Promise.all([
+      WzryAPI.adminStats(token),
+      WzryAPI.adminHeroes(token),
+      WzryAPI.adminRecent(token),
+      WzryAPI.adminTimeseries(token),
+    ]);
+    if (!s || s.__error === 401 || s.__error === 403) { clearToken(); return showLogin(); }
+    renderStats(s);
+    renderHeroes(h);
+    renderRecent(r);
+    renderTimeseries(t);
+  }
+
+  function renderStats(s) {
+    if (!s) return;
+    $("#kpiTotalVisits").textContent = (s.total_visits || 0).toLocaleString();
+    $("#kpiUV").textContent = (s.unique_visitors || 0).toLocaleString();
+    $("#kpiResults").textContent = (s.total_results || 0).toLocaleString();
+    $("#kpiToday").textContent = (s.today_visits || 0).toLocaleString();
+    $("#kpiTodayTime").textContent = "更新于 " + new Date().toLocaleString("zh-CN");
+  }
+
+  function renderHeroes(h) {
+    const list = $("#heroList");
+    if (!h || !h.heroes) { list.innerHTML = '<div class="admin-empty">暂无数据</div>'; return; }
+    const items = (h.heroes || []).slice(0, 15);
+    if (items.length === 0) { list.innerHTML = '<div class="admin-empty">暂无数据</div>'; return; }
+    const maxC = items[0].count || 1;
+    list.innerHTML = items.map(x => `
+      <div class="hero-bar-item">
+        <div class="hero-bar-name">${x.hero_id}</div>
+        <div class="hero-bar-track"><div class="hero-bar-fill" style="width:${(x.count / maxC * 100).toFixed(0)}%"></div></div>
+        <div class="hero-bar-value">${x.count}</div>
+      </div>`).join("");
+  }
+
+  function renderRecent(r) {
+    const list = $("#recentList");
+    if (!r || !r.items) { list.innerHTML = '<div class="admin-empty">暂无数据</div>'; return; }
+    const items = r.items.slice(0, 30);
+    if (items.length === 0) { list.innerHTML = '<div class="admin-empty">暂无数据</div>'; return; }
+    list.innerHTML = items.map(x => {
+      const t = new Date(x.created_at);
+      const ts = t.toLocaleString("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+      return `<div class="row">
+        <span class="row-time">${ts}</span>
+        <span class="row-main">vid: ${x.visitor_id.slice(0, 10)}…</span>
+        <span class="row-hero">${x.hero_id}</span>
+      </div>`;
+    }).join("");
+  }
+
+  function renderTimeseries(t) {
+    const canvas = $("#timeChart");
+    if (!t || !t.series) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    const W = canvas.clientWidth || 800, H = 220;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.height = H + "px";
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const data = t.series;
+    if (!data.length) return;
+    const maxV = Math.max(1, ...data.map(p => p.visits));
+    const padL = 40, padR = 10, padT = 14, padB = 28;
+    const plotW = W - padL - padR;
+    const plotH = H - padT - padB;
+
+    // grid
+    ctx.strokeStyle = "rgba(255,255,255,.06)";
+    ctx.fillStyle = "#7a6f96";
+    ctx.font = "11px system-ui";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "right";
+    for (let i = 0; i <= 4; i++) {
+      const y = padT + plotH * i / 4;
+      ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+      const v = Math.round(maxV * (1 - i / 4));
+      ctx.fillText(v, padL - 6, y);
+    }
+
+    // bars
+    const bw = plotW / data.length * 0.7;
+    const gap = plotW / data.length - bw;
+    for (let i = 0; i < data.length; i++) {
+      const p = data[i];
+      const x = padL + (plotW / data.length) * i + gap / 2;
+      const barH = (p.visits / maxV) * plotH;
+      const y = padT + plotH - barH;
+      const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+      grad.addColorStop(0, "#ffd166");
+      grad.addColorStop(1, "#7f5af0");
+      ctx.fillStyle = grad;
+      ctx.fillRect(x, y, bw, barH);
+    }
+
+    // x axis labels (every 5 days)
+    ctx.fillStyle = "#7a6f96";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    for (let i = 0; i < data.length; i++) {
+      if (i % 5 === 0 || i === data.length - 1) {
+        const x = padL + (plotW / data.length) * i + bw / 2 + gap / 2;
+        const d = data[i].date.slice(5);
+        ctx.fillText(d, x, padT + plotH + 6);
+      }
+    }
+  }
+
+  // events
+  $("#btnLogin").addEventListener("click", login);
+  $("#adminPass").addEventListener("keydown", e => { if (e.key === "Enter") login(); });
+  $("#btnLogout").addEventListener("click", () => { clearToken(); showLogin(); });
+  $("#btnRefresh").addEventListener("click", loadAll);
+
+  // startup
+  if (getToken()) { showDash(); loadAll(); } else { showLogin(); }
+})();
+</script>
+</body>
+</html>

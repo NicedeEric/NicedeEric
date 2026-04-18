@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+*.log
+
+# Wrangler
+worker/.wrangler/
+worker/.dev.vars
+worker/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
