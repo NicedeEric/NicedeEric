@@ -208,7 +208,14 @@ function withCors(resp, request, env) {
   const headers = new Headers(resp.headers);
   const origin = request.headers.get("Origin") || "";
   const allowlist = (env.CORS_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
-  if (allowlist.length === 0 || allowlist.includes(origin) || allowlist.includes("*")) {
+  // Auto-allow any localhost / 127.0.0.1 origin regardless of port (dev convenience)
+  const isLocalhost = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  if (
+    allowlist.length === 0 ||
+    allowlist.includes(origin) ||
+    allowlist.includes("*") ||
+    isLocalhost
+  ) {
     headers.set("Access-Control-Allow-Origin", origin || "*");
     headers.set("Vary", "Origin");
     headers.set("Access-Control-Allow-Credentials", "false");

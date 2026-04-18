@@ -111,28 +111,33 @@
   </div>
 </section>
 
-<!-- ============ 结果页 ============ -->
+<!-- ============ 结果页（v8: 英雄 first，深度分析在下半） ============ -->
 <section id="screen-result" class="screen">
   <div class="result-wrap">
 
-    <!-- 书法风格英雄名片 -->
+    <!-- 书法风格英雄名片（顶部） -->
     <div class="hero-card" id="heroCard">
       <div class="hero-card-border">
-        <div class="hero-card-era" id="resEra">时代</div>
-        <div class="hero-card-badge">你的英雄</div>
+        <div class="hero-card-sig" id="cardSig">武</div>
+        <div class="hero-card-deco-top">❋</div>
+        <div class="hero-card-deco-bot">❋</div>
+        <div class="hero-card-era-row">
+          <span class="hero-card-era" id="resEra">时代</span>
+          <span class="hero-card-archetype" id="resArchetype">原型</span>
+        </div>
+        <div class="hero-card-badge">和你最像的历史人物</div>
         <h2 class="hero-card-name" id="resName">
           <span class="name-char"></span>
         </h2>
         <div class="hero-card-title" id="resTitle">称号</div>
         <div class="hero-card-role" id="resRole">身份</div>
         <div class="hero-card-quote" id="resQuote">台词</div>
-        <div class="hero-card-deco-top">❋</div>
-        <div class="hero-card-deco-bot">❋</div>
+        <div class="hero-card-mood" id="resMood">气质</div>
       </div>
     </div>
 
     <div class="result-card">
-      <!-- 匹配度 + 特质 -->
+
       <div class="match-score-line">
         <span class="match-label">灵魂契合</span>
         <span class="match-value" id="matchValue">—</span>
@@ -140,35 +145,107 @@
 
       <div class="result-traits" id="resTraits"></div>
 
-      <!-- 为什么是你 -->
+      <!-- 英雄背景 -->
       <div class="result-section anim-slide">
-        <div class="section-title">为何是 <span id="matchName">这位</span>？</div>
-        <ul class="match-list" id="resMatch"></ul>
-      </div>
-
-      <!-- 英雄背景（详细） -->
-      <div class="result-section anim-slide">
-        <div class="section-title">英雄背景</div>
+        <div class="section-title">英 雄 背 景</div>
         <p class="result-lore" id="resLore"></p>
       </div>
 
-      <!-- 性格画像（详细） -->
+      <!-- 英雄性格 -->
       <div class="result-section anim-slide">
-        <div class="section-title">性格画像</div>
+        <div class="section-title">英 雄 性 格</div>
         <p class="result-personality" id="resPersonality"></p>
       </div>
 
-      <!-- 8 维人格雷达 -->
+      <!-- 你与TA的同与不同 -->
       <div class="result-section anim-slide">
-        <div class="section-title">你的八维人格</div>
-        <div class="dims-wrap" id="dimsWrap"></div>
+        <div class="section-title">你 与 <span id="matchName">TA</span> 的 同 与 不 同</div>
+        <div class="similarity-block" id="resSimilarity"></div>
       </div>
 
-      <!-- 操作 -->
-      <div class="result-actions">
-        <button class="btn-primary" id="btnShare">📜 生成分享卷</button>
-        <button class="btn-ghost" id="btnRetry">重新测试</button>
+      <!-- 同行 + 反差 -->
+      <div class="result-section anim-slide">
+        <div class="section-title">同 行 者 · 反 差 者</div>
+        <div class="kindred-block" id="resKindred"></div>
       </div>
+
+      <!-- 来自 TA 的箴言 -->
+      <div class="result-section anim-slide">
+        <div class="section-title">TA 想 告 诉 你 的 话</div>
+        <blockquote class="wisdom-quote" id="resWisdom">—</blockquote>
+      </div>
+    </div>
+
+    <!-- ============ 关于"你"自己的深度分析（在下半） ============ -->
+    <div class="act-title act-title-you" style="margin-top:30px;">
+      <span class="act-title-line"></span>
+      <span class="act-title-text">深 度 · 关 于 你 自 己</span>
+      <span class="act-title-line"></span>
+    </div>
+
+    <!-- 你的人格名片（代码 + 类型名 + 铭文 + 命运） -->
+    <div class="persona-card">
+      <div class="persona-decorations">❦ 人 格 鉴 ❦</div>
+
+      <div class="persona-type-label">你的人格类型</div>
+      <div class="persona-type-name" id="resTypeName">— 者</div>
+
+      <div class="persona-code">
+        <div class="persona-code-label">人格代码</div>
+        <div class="persona-code-chars" id="resCode">— — — — — — — —</div>
+      </div>
+
+      <div class="persona-inscription">
+        <div class="persona-inscription-label">人格铭文</div>
+        <div class="persona-inscription-text" id="resInscription">— · — · —</div>
+      </div>
+
+      <div class="persona-fate">
+        <span>命运趋向：</span><strong id="resFateArchetype">—</strong>
+      </div>
+    </div>
+
+    <!-- 本质画像（300+ 字段落） -->
+    <div class="result-section anim-slide persona-section">
+      <div class="section-title">本 质 画 像</div>
+      <p class="essence-text" id="resEssence">—</p>
+    </div>
+
+    <!-- 8 维深度解读（每维一段 + 同类历史人物） -->
+    <div class="result-section anim-slide persona-section">
+      <div class="section-title">八 维 深 度</div>
+      <div class="dims-deep-wrap" id="dimsDeepWrap"></div>
+    </div>
+
+    <!-- 5 生活场景预测 -->
+    <div class="result-section anim-slide persona-section">
+      <div class="section-title">五 种 境 遇 下 的 你</div>
+      <div class="scenarios-wrap" id="scenariosWrap"></div>
+    </div>
+
+    <!-- 优势 / 盲点 / 驱动 -->
+    <div class="result-section anim-slide persona-section">
+      <div class="section-title">优 势 · 盲 点 · 驱 动</div>
+      <div class="swe-block">
+        <div class="swe-card swe-strength">
+          <div class="swe-label">✦ 你的优势</div>
+          <div class="swe-text" id="resSWEStrength">—</div>
+        </div>
+        <div class="swe-card swe-blindspot">
+          <div class="swe-label">⚠ 你的盲点</div>
+          <div class="swe-text" id="resSWEBlindspot">—</div>
+        </div>
+        <div class="swe-card swe-engine">
+          <div class="swe-label">⚡ 你的驱动内核</div>
+          <div class="swe-text" id="resSWEEngine">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 操作 -->
+    <div class="result-actions" style="margin-top:30px;">
+      <button class="btn-primary" id="btnShare">📜 生成分享卷</button>
+      <button class="btn-ghost" id="btnRetry">重新测试</button>
     </div>
 
     <p class="result-foot">© 古今英雄测 · 非商业趣味测试 · 人物原型均来自公共领域历史与神话</p>
@@ -182,8 +259,11 @@
       <div class="share-border-inner">
 
         <div class="share-header">
-          <div class="share-era" id="shareEra">时代</div>
-          <div class="share-deco">❦ 古 今 英 雄 测 ❦</div>
+          <div>
+            <span class="share-era" id="shareEra">时代</span>
+            <span class="share-archetype-tag" id="shareArchetype">原型</span>
+          </div>
+          <div class="share-deco" style="margin-top:14px">❦ 古 今 英 雄 测 ❦</div>
         </div>
 
         <div class="share-hero-block">
@@ -191,6 +271,7 @@
           <div class="share-hero-name" id="shareName">关羽</div>
           <div class="share-hero-title" id="shareTitle">武圣</div>
           <div class="share-hero-role" id="shareRole">三国 · 武神</div>
+          <div class="share-hero-mood" id="shareMood">气质</div>
           <div class="share-hero-quote" id="shareQuote"></div>
         </div>
 
@@ -242,6 +323,7 @@
 </div>
 
 <script src="./assets/js/api.js"></script>
+<script src="./assets/js/content.js"></script>
 <script src="./assets/js/app.js"></script>
 </body>
 </html>

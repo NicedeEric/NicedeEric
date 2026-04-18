@@ -146,7 +146,18 @@
         "Z": 9,
         "M": 8
       },
-      "color": "#7B2CBF"
+      "color": "#7B2CBF",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "你以为没路了？路是你自己劈出来的——没人给的时候，就用斧头。"
     },
     {
       "id": "nvwa",
@@ -176,7 +187,18 @@
         "Z": 9,
         "M": 5
       },
-      "color": "#9D4EDD"
+      "color": "#9D4EDD",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "别等天塌了再补，每天都补一点自己，你就能扛。"
     },
     {
       "id": "houyi",
@@ -206,7 +228,18 @@
         "Z": 8,
         "M": 4
       },
-      "color": "#FFD60A"
+      "color": "#FFD60A",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "我射下了九个太阳，却救不回一个嫦娥。你要先想清楚：你守的，值不值。"
     },
     {
       "id": "change",
@@ -236,7 +269,18 @@
         "Z": 8,
         "M": 2
       },
-      "color": "#C8B6FF"
+      "color": "#C8B6FF",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "想清楚了再吞那颗药。有些门一关，就再也打不开。"
     },
     {
       "id": "dayu",
@@ -266,7 +310,18 @@
         "Z": 9,
         "M": 4
       },
-      "color": "#386641"
+      "color": "#386641",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "家可以三过不入，但不能永远不回。记得回头看看。"
     },
     {
       "id": "sunwukong",
@@ -296,7 +351,18 @@
         "Z": 8,
         "M": 10
       },
-      "color": "#F77F00"
+      "color": "#F77F00",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "规矩能破，但得分场合。你反抗的要是值得的东西，不是所有的权威。"
     },
     {
       "id": "nezha",
@@ -326,7 +392,18 @@
         "Z": 7,
         "M": 10
       },
-      "color": "#FF006E"
+      "color": "#FF006E",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "削骨还父那天我才明白：你父母生你，但你活的是你自己的命。"
     },
     {
       "id": "yangjian",
@@ -356,7 +433,18 @@
         "Z": 8,
         "M": 8
       },
-      "color": "#2A9D8F"
+      "color": "#2A9D8F",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "天眼再亮，也得先看看自己。很多事情不是别人错，是你盯得不够深。"
     },
     {
       "id": "zhubajie",
@@ -386,7 +474,18 @@
         "Z": 6,
         "M": 9
       },
-      "color": "#F4A261"
+      "color": "#F4A261",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "别那么紧绷。我混了几万年还是这样，挺好。有时候装傻就是真聪明。"
     },
     {
       "id": "jinchan",
@@ -416,7 +515,18 @@
         "Z": 10,
         "M": 5
       },
-      "color": "#FFD166"
+      "color": "#FFD166",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "别想一步取到真经。一步一叩首，走到了就是到了。"
     },
     {
       "id": "taiyizhenren",
@@ -446,7 +556,18 @@
         "Z": 8,
         "M": 4
       },
-      "color": "#CFA46B"
+      "color": "#CFA46B",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "徒弟跌倒了，你别急着扶。让他自己爬一次，他就永远记得怎么站。"
     },
     {
       "id": "kongzi",
@@ -476,7 +597,18 @@
         "Z": 10,
         "M": 7
       },
-      "color": "#8D6E63"
+      "color": "#8D6E63",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "己所不欲，勿施于人。这八个字，我教了一辈子，你一辈子都用得上。"
     },
     {
       "id": "laozi",
@@ -506,7 +638,18 @@
         "Z": 7,
         "M": 1
       },
-      "color": "#4A5759"
+      "color": "#4A5759",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "别跟自然对着干。水没手没脚，却能穿透石头——你学学水。"
     },
     {
       "id": "zhuangzhou",
@@ -536,7 +679,18 @@
         "Z": 6,
         "M": 2
       },
-      "color": "#588157"
+      "color": "#588157",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "做人别太紧，梦里做过蝴蝶的人，才知道什么叫自由。"
     },
     {
       "id": "mozi",
@@ -566,7 +720,18 @@
         "Z": 10,
         "M": 6
       },
-      "color": "#415A77"
+      "color": "#415A77",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "你以为理想跟现实不兼容？我做机器打仗，就为了止战。矛盾也是路。"
     },
     {
       "id": "sunzi",
@@ -596,7 +761,18 @@
         "Z": 7,
         "M": 4
       },
-      "color": "#1D3557"
+      "color": "#1D3557",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "上兵伐谋。能不打就不打，非打不可，就一招毙命。"
     },
     {
       "id": "guiguzi",
@@ -626,7 +802,18 @@
         "Z": 6,
         "M": 0
       },
-      "color": "#2F3E46"
+      "color": "#2F3E46",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "下山容易，教学生难。你如果想带团队，先学会看别人比你强也不慌。"
     },
     {
       "id": "qvyuan",
@@ -656,7 +843,18 @@
         "Z": 10,
         "M": 8
       },
-      "color": "#457B9D"
+      "color": "#457B9D",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "有些忠诚会要你的命。但如果你不忠于那个东西，你连活着也是假的。"
     },
     {
       "id": "lianpo",
@@ -686,7 +884,18 @@
         "Z": 9,
         "M": 9
       },
-      "color": "#6F4E37"
+      "color": "#6F4E37",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "别人说你老了？饭量还在，腿脚还在，就把饭吃了、把路走完。"
     },
     {
       "id": "baiqi",
@@ -716,7 +925,18 @@
         "Z": 3,
         "M": 8
       },
-      "color": "#343A40"
+      "color": "#343A40",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我赢了太多，但不懂停。你要是学我打仗，也学我为什么下场——别太狠。"
     },
     {
       "id": "mengtian",
@@ -746,7 +966,18 @@
         "Z": 9,
         "M": 5
       },
-      "color": "#495057"
+      "color": "#495057",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "守的事不热闹，但不守就没人扛。你在的岗位上，就是万里长城的一段。"
     },
     {
       "id": "yingzheng",
@@ -776,7 +1007,18 @@
         "Z": 3,
         "M": 10
       },
-      "color": "#5D3A9B"
+      "color": "#5D3A9B",
+      "archetype": "帝王",
+      "theme": {
+        "sig": "帝",
+        "primary": "#8B6914",
+        "glow": "#FFD166",
+        "accent": "#C1121F",
+        "particle_hue": "rgba(255,209,102,",
+        "frame_motif": "龙",
+        "mood": "龙腾盛世"
+      },
+      "wisdom": "孤独是权力的代价。你如果想站得高，就得接受没人能跟你对话。"
     },
     {
       "id": "xishi",
@@ -806,7 +1048,18 @@
         "Z": 8,
         "M": 3
       },
-      "color": "#F4A6C0"
+      "color": "#F4A6C0",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "别人让我去送命，我去了。不是我傻，是我想得比他们更远。"
     },
     {
       "id": "jingke",
@@ -836,7 +1089,18 @@
         "Z": 10,
         "M": 9
       },
-      "color": "#D90429"
+      "color": "#D90429",
+      "archetype": "侠客",
+      "theme": {
+        "sig": "侠",
+        "primary": "#3C2A4D",
+        "glow": "#C0A1D9",
+        "accent": "#F4F1DE",
+        "particle_hue": "rgba(192,161,217,",
+        "frame_motif": "月",
+        "mood": "月下孤刃"
+      },
+      "wisdom": "明知不可为而为之，不是莽。是这件事值得你用命去换一个姿态。"
     },
     {
       "id": "miyue",
@@ -866,7 +1130,18 @@
         "Z": 5,
         "M": 7
       },
-      "color": "#C1121F"
+      "color": "#C1121F",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "为孩子可以做很多事。但别忘了先把自己做成孩子能仰望的那个人。"
     },
     {
       "id": "gaojianli",
@@ -896,7 +1171,18 @@
         "Z": 10,
         "M": 4
       },
-      "color": "#8338EC"
+      "color": "#8338EC",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "朋友死了我还是朋友。这辈子的义气不是活人之间的，是超越死亡的。"
     },
     {
       "id": "zhongwuyan",
@@ -926,7 +1212,18 @@
         "Z": 10,
         "M": 9
       },
-      "color": "#2B2D42"
+      "color": "#2B2D42",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "我丑，但我敢说真话。你如果只会用漂亮糊弄自己，迟早会被别人糊弄。"
     },
     {
       "id": "liubang",
@@ -956,7 +1253,18 @@
         "Z": 3,
         "M": 9
       },
-      "color": "#E85D75"
+      "color": "#E85D75",
+      "archetype": "帝王",
+      "theme": {
+        "sig": "帝",
+        "primary": "#8B6914",
+        "glow": "#FFD166",
+        "accent": "#C1121F",
+        "particle_hue": "rgba(255,209,102,",
+        "frame_motif": "龙",
+        "mood": "龙腾盛世"
+      },
+      "wisdom": "我打不过项羽，但我会用人。你做事，不用样样强，会找比你强的人来。"
     },
     {
       "id": "hanxin",
@@ -986,7 +1294,18 @@
         "Z": 4,
         "M": 2
       },
-      "color": "#5E60CE"
+      "color": "#5E60CE",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "胯下之辱我钻了，后来统帅了三十万大军。你现在弯腰，是为将来站得直。"
     },
     {
       "id": "zhangliang",
@@ -1016,7 +1335,18 @@
         "Z": 8,
         "M": 1
       },
-      "color": "#4A5759"
+      "color": "#4A5759",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "出了主意就退场。功劳你不要，命你就保住了。这是谋圣的第一课。"
     },
     {
       "id": "xiangyu",
@@ -1046,7 +1376,18 @@
         "Z": 9,
         "M": 10
       },
-      "color": "#6A040F"
+      "color": "#6A040F",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我到死都没学会服软。你比我聪明的话，学一点柔。否则，你也会输给刘邦那样的人。"
     },
     {
       "id": "yuji",
@@ -1076,7 +1417,18 @@
         "Z": 10,
         "M": 7
       },
-      "color": "#E63946"
+      "color": "#E63946",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "我爱他爱到不愿意活下去。但你要想清楚：有些爱是支撑，有些爱是绑架。"
     },
     {
       "id": "wangzhaojun",
@@ -1106,7 +1458,18 @@
         "Z": 9,
         "M": 5
       },
-      "color": "#48CAE4"
+      "color": "#48CAE4",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "最美的嫁妆不是首饰，是你愿意去最远的地方。有胆识的女人比美人走得远。"
     },
     {
       "id": "guanyu",
@@ -1136,7 +1499,18 @@
         "Z": 10,
         "M": 10
       },
-      "color": "#C1121F"
+      "color": "#C1121F",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "答应了就是答应了。你如果做不到，就别答应；答应了，就万死不辞。"
     },
     {
       "id": "zhangfei",
@@ -1166,7 +1540,18 @@
         "Z": 9,
         "M": 10
       },
-      "color": "#370617"
+      "color": "#370617",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "认定的兄弟，哪怕错了也得先挡一下。但挡完你得跟他说清楚。"
     },
     {
       "id": "zhaoyun",
@@ -1196,7 +1581,18 @@
         "Z": 10,
         "M": 4
       },
-      "color": "#1D3557"
+      "color": "#1D3557",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "别抢光环，关键时候在就行。被需要比被看见重要。"
     },
     {
       "id": "zhugeliang",
@@ -1226,7 +1622,18 @@
         "Z": 10,
         "M": 2
       },
-      "color": "#023E8A"
+      "color": "#023E8A",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "明知不可为而为之。人做事别只问能不能赢，也问这事该不该做。"
     },
     {
       "id": "caocao",
@@ -1256,7 +1663,18 @@
         "Z": 2,
         "M": 9
       },
-      "color": "#495057"
+      "color": "#495057",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "宁教我负天下人——这话我说过，我不后悔。但你听了别学我，除非你扛得起。"
     },
     {
       "id": "zhouyu",
@@ -1286,7 +1704,18 @@
         "Z": 7,
         "M": 9
       },
-      "color": "#F77F00"
+      "color": "#F77F00",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "遇到比你强的人，先鞠躬，再学。我没学会，所以我死得早。"
     },
     {
       "id": "lvbu",
@@ -1316,7 +1745,18 @@
         "Z": 1,
         "M": 10
       },
-      "color": "#780000"
+      "color": "#780000",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我武力天下第一，却没一个真心朋友。你知道为什么吗？光靠拳头留不住人。"
     },
     {
       "id": "daqiao",
@@ -1346,7 +1786,18 @@
         "Z": 9,
         "M": 3
       },
-      "color": "#C77DFF"
+      "color": "#C77DFF",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "家里最稳的人不一定是最亮的。我不闪光，但我在，家就在。"
     },
     {
       "id": "xiaoqiao",
@@ -1376,7 +1827,18 @@
         "Z": 8,
         "M": 7
       },
-      "color": "#F4A6B8"
+      "color": "#F4A6B8",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "对那个你爱的人好就行，别人怎么看都不重要。人生太短，别耗在外人眼神里。"
     },
     {
       "id": "diaochan",
@@ -1406,7 +1868,18 @@
         "Z": 9,
         "M": 4
       },
-      "color": "#D62828"
+      "color": "#D62828",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "有时候你得把最珍贵的东西献出去。但献之前要确认：这个代价，值不值。"
     },
     {
       "id": "caiwenji",
@@ -1436,7 +1909,18 @@
         "Z": 8,
         "M": 5
       },
-      "color": "#FFB5A7"
+      "color": "#FFB5A7",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "经历过的苦，我不怨，都写进了曲子里。你的痛也一样，别浪费，用起来。"
     },
     {
       "id": "zhenji",
@@ -1466,7 +1950,18 @@
         "Z": 8,
         "M": 3
       },
-      "color": "#5C5EAB"
+      "color": "#5C5EAB",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "我美得活不过三十岁。你如果也长得好看，记得：别人看见的永远是皮相，你自己得守住里子。"
     },
     {
       "id": "sunshangxiang",
@@ -1496,7 +1991,18 @@
         "Z": 9,
         "M": 9
       },
-      "color": "#FB5607"
+      "color": "#FB5607",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "谁说女人不能握刀？谁说你必须温柔？做你自己，别道歉。"
     },
     {
       "id": "huangzhong",
@@ -1526,7 +2032,18 @@
         "Z": 9,
         "M": 6
       },
-      "color": "#B5651D"
+      "color": "#B5651D",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我六十岁才立大功。你起步晚没关系，别认输。松懈才是老，年龄不是。"
     },
     {
       "id": "dianwei",
@@ -1556,7 +2073,18 @@
         "Z": 10,
         "M": 10
       },
-      "color": "#6D6875"
+      "color": "#6D6875",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我不会谋略，我就会一件事——主公在，我在；主公走，我替他挡。"
     },
     {
       "id": "machao",
@@ -1586,7 +2114,18 @@
         "Z": 8,
         "M": 9
       },
-      "color": "#ADB5BD"
+      "color": "#ADB5BD",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "仇恨能推你走很远，但推不到头。你得给自己留一个'复仇之后'的故事。"
     },
     {
       "id": "libai",
@@ -1616,7 +2155,18 @@
         "Z": 7,
         "M": 8
       },
-      "color": "#7F5AF0"
+      "color": "#7F5AF0",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "别把自己困在一座城里、一个位置上。走出去，世界比你想的大。"
     },
     {
       "id": "direnjie",
@@ -1646,7 +2196,18 @@
         "Z": 10,
         "M": 4
       },
-      "color": "#0077B6"
+      "color": "#0077B6",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "真相不需要你来维护，它自己会浮出来。你需要的，是有耐心等它。"
     },
     {
       "id": "wuzetian",
@@ -1676,7 +2237,18 @@
         "Z": 3,
         "M": 9
       },
-      "color": "#FFB703"
+      "color": "#FFB703",
+      "archetype": "帝王",
+      "theme": {
+        "sig": "帝",
+        "primary": "#8B6914",
+        "glow": "#FFD166",
+        "accent": "#C1121F",
+        "particle_hue": "rgba(255,209,102,",
+        "frame_motif": "龙",
+        "mood": "龙腾盛世"
+      },
+      "wisdom": "规矩挡不住有本事的人。但有本事之前，你先得忍受没人信你的那段时间。"
     },
     {
       "id": "yangyuhuan",
@@ -1706,7 +2278,18 @@
         "Z": 7,
         "M": 7
       },
-      "color": "#FFB5A7"
+      "color": "#FFB5A7",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "他爱我不是因为我聪明，是因为我好看。我早就知道，但我选择让他爱。"
     },
     {
       "id": "shangguanwaner",
@@ -1736,7 +2319,18 @@
         "Z": 5,
         "M": 5
       },
-      "color": "#9D4EDD"
+      "color": "#9D4EDD",
+      "archetype": "文人",
+      "theme": {
+        "sig": "文",
+        "primary": "#2A5F6F",
+        "glow": "#6FB3C0",
+        "accent": "#E4D4B5",
+        "particle_hue": "rgba(111,179,192,",
+        "frame_motif": "墨",
+        "mood": "诗书气韵"
+      },
+      "wisdom": "笔就是我的剑。如果你会写字，别浪费——写下来的东西比剑更能改变人。"
     },
     {
       "id": "huamulan",
@@ -1766,7 +2360,18 @@
         "Z": 9,
         "M": 3
       },
-      "color": "#E76F51"
+      "color": "#E76F51",
+      "archetype": "女将",
+      "theme": {
+        "sig": "媛",
+        "primary": "#9D4E5C",
+        "glow": "#F4A6B8",
+        "accent": "#FFD7C2",
+        "particle_hue": "rgba(244,166,184,",
+        "frame_motif": "花",
+        "mood": "温柔刚烈"
+      },
+      "wisdom": "换一身男装我就是男将军。别让性别决定你能做什么，你决定自己。"
     },
     {
       "id": "chengyaojin",
@@ -1796,7 +2401,18 @@
         "Z": 6,
         "M": 8
       },
-      "color": "#FFC300"
+      "color": "#FFC300",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我活到一百岁，靠的不是聪明，是乐天。你别愁眉苦脸，烦恼比敌人还害人。"
     },
     {
       "id": "sulie",
@@ -1826,7 +2442,18 @@
         "Z": 9,
         "M": 2
       },
-      "color": "#6B4F1D"
+      "color": "#6B4F1D",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我打了一辈子仗，没人记得我的名字。没事，仗赢了就行，名字是浮的。"
     },
     {
       "id": "zhongkui",
@@ -1856,7 +2483,18 @@
         "Z": 10,
         "M": 10
       },
-      "color": "#6A040F"
+      "color": "#6A040F",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我长得吓人，但心里敞亮。别因为一个人外表让你不舒服，就否定他全部。"
     },
     {
       "id": "gongbenwuzang",
@@ -1886,7 +2524,18 @@
         "Z": 8,
         "M": 2
       },
-      "color": "#264653"
+      "color": "#264653",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "剑要磨一辈子。你做的事，也得磨一辈子，才叫修行。"
     },
     {
       "id": "makeboluo",
@@ -1916,7 +2565,18 @@
         "Z": 6,
         "M": 7
       },
-      "color": "#0077B6"
+      "color": "#0077B6",
+      "archetype": "侠客",
+      "theme": {
+        "sig": "侠",
+        "primary": "#3C2A4D",
+        "glow": "#C0A1D9",
+        "accent": "#F4F1DE",
+        "particle_hue": "rgba(192,161,217,",
+        "frame_motif": "月",
+        "mood": "月下孤刃"
+      },
+      "wisdom": "世界比你想的大得多。你坐井那么久，也该出来看看天了。"
     },
     {
       "id": "luban",
@@ -1946,7 +2606,18 @@
         "Z": 8,
         "M": 6
       },
-      "color": "#A0522D"
+      "color": "#A0522D",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "手艺是你的根。别让花哨的新词骗你，把一件事做精比什么都重要。"
     },
     {
       "id": "yadiana",
@@ -1976,7 +2647,18 @@
         "Z": 9,
         "M": 8
       },
-      "color": "#E9C46A"
+      "color": "#E9C46A",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "战争是最后的选择，但必要的时候，你也得能拔剑。别怕出手，也别乱出手。"
     },
     {
       "id": "donghuangtaiyi",
@@ -2006,7 +2688,18 @@
         "Z": 9,
         "M": 2
       },
-      "color": "#5E548E"
+      "color": "#5E548E",
+      "archetype": "隐士",
+      "theme": {
+        "sig": "隐",
+        "primary": "#3A5A40",
+        "glow": "#A3B18A",
+        "accent": "#DAD7CD",
+        "particle_hue": "rgba(163,177,138,",
+        "frame_motif": "云",
+        "mood": "云山烟水"
+      },
+      "wisdom": "真正的威严不用说出来。你安静站在那儿，事情自然归位。别急着发声。"
     },
     {
       "id": "niumo",
@@ -2036,7 +2729,18 @@
         "Z": 9,
         "M": 10
       },
-      "color": "#6F1D1B"
+      "color": "#6F1D1B",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "兄弟有事儿，你就得去。管他对不对，先站到他身边，再说其他的。"
     },
     {
       "id": "liushan",
@@ -2066,7 +2770,18 @@
         "Z": 4,
         "M": 7
       },
-      "color": "#F4A261"
+      "color": "#F4A261",
+      "archetype": "帝王",
+      "theme": {
+        "sig": "帝",
+        "primary": "#8B6914",
+        "glow": "#FFD166",
+        "accent": "#C1121F",
+        "particle_hue": "rgba(255,209,102,",
+        "frame_motif": "龙",
+        "mood": "龙腾盛世"
+      },
+      "wisdom": "装傻有时候是最聪明的活法。你如果赢不了，别硬赢；保住自己，山还在。"
     },
     {
       "id": "jiangziya",
@@ -2096,7 +2811,18 @@
         "Z": 9,
         "M": 3
       },
-      "color": "#6A4C93"
+      "color": "#6A4C93",
+      "archetype": "谋士",
+      "theme": {
+        "sig": "谋",
+        "primary": "#1D3557",
+        "glow": "#8AB4D8",
+        "accent": "#A8DADC",
+        "particle_hue": "rgba(138,180,216,",
+        "frame_motif": "◐",
+        "mood": "夜深思远"
+      },
+      "wisdom": "我七十二岁才下山。你急什么？能等得起的人，时间最后会站在他那边。"
     },
     {
       "id": "lanlingwang",
@@ -2126,7 +2852,90 @@
         "Z": 9,
         "M": 5
       },
-      "color": "#3A0CA3"
+      "color": "#3A0CA3",
+      "archetype": "武将",
+      "theme": {
+        "sig": "武",
+        "primary": "#8B1A1A",
+        "glow": "#E63946",
+        "accent": "#FFD166",
+        "particle_hue": "rgba(230,57,70,",
+        "frame_motif": "⚔",
+        "mood": "烽火血色"
+      },
+      "wisdom": "我戴面具上战场，不是怕人看见我，是不想他们看见我的柔软。面具也是一种温柔。"
     }
-  ]
+  ],
+  "archetypes": {
+    "武将": {
+      "label": "武将",
+      "sig": "武",
+      "primary": "#8B1A1A",
+      "glow": "#E63946",
+      "accent": "#FFD166",
+      "particle_hue": "rgba(230,57,70,",
+      "frame_motif": "⚔",
+      "mood": "烽火血色"
+    },
+    "文人": {
+      "label": "文人",
+      "sig": "文",
+      "primary": "#2A5F6F",
+      "glow": "#6FB3C0",
+      "accent": "#E4D4B5",
+      "particle_hue": "rgba(111,179,192,",
+      "frame_motif": "墨",
+      "mood": "诗书气韵"
+    },
+    "帝王": {
+      "label": "帝王",
+      "sig": "帝",
+      "primary": "#8B6914",
+      "glow": "#FFD166",
+      "accent": "#C1121F",
+      "particle_hue": "rgba(255,209,102,",
+      "frame_motif": "龙",
+      "mood": "龙腾盛世"
+    },
+    "谋士": {
+      "label": "谋士",
+      "sig": "谋",
+      "primary": "#1D3557",
+      "glow": "#8AB4D8",
+      "accent": "#A8DADC",
+      "particle_hue": "rgba(138,180,216,",
+      "frame_motif": "◐",
+      "mood": "夜深思远"
+    },
+    "侠客": {
+      "label": "侠客",
+      "sig": "侠",
+      "primary": "#3C2A4D",
+      "glow": "#C0A1D9",
+      "accent": "#F4F1DE",
+      "particle_hue": "rgba(192,161,217,",
+      "frame_motif": "月",
+      "mood": "月下孤刃"
+    },
+    "隐士": {
+      "label": "隐士",
+      "sig": "隐",
+      "primary": "#3A5A40",
+      "glow": "#A3B18A",
+      "accent": "#DAD7CD",
+      "particle_hue": "rgba(163,177,138,",
+      "frame_motif": "云",
+      "mood": "云山烟水"
+    },
+    "女将": {
+      "label": "女将",
+      "sig": "媛",
+      "primary": "#9D4E5C",
+      "glow": "#F4A6B8",
+      "accent": "#FFD7C2",
+      "particle_hue": "rgba(244,166,184,",
+      "frame_motif": "花",
+      "mood": "温柔刚烈"
+    }
+  }
 }

@@ -9,7 +9,7 @@
   // Leave as empty string to disable analytics tracking.
   // Example: "https://wzry-api.<your-subdomain>.workers.dev"
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  const API_BASE = (window.__API_BASE__ || "").replace(/\/$/, "");
+  const API_BASE = (window.__API_BASE__ || "https://wzry-api.wzrypersona.workers.dev").replace(/\/$/, "");
 
   const LS_VID = "wzry_vid";
   function getVisitorId() {
@@ -29,10 +29,14 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body || {}),
       });
-      if (!r.ok) return null;
+      if (!r.ok) {
+        let detail = null;
+        try { detail = await r.json(); } catch (e) {}
+        return { __error: r.status, ...(detail || {}) };
+      }
       return await r.json();
     } catch (e) {
-      return null;
+      return { __error: -1, message: String(e && e.message || e) };
     }
   }
 
@@ -45,7 +49,7 @@
       if (!r.ok) return { __error: r.status };
       return await r.json();
     } catch (e) {
-      return { __error: -1 };
+      return { __error: -1, message: String(e && e.message || e) };
     }
   }
 
