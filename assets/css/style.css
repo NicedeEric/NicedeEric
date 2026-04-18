@@ -280,6 +280,140 @@ canvas { display: block; }
   letter-spacing: 1px;
 }
 
+/* 双模式选择 */
+.mode-selector {
+  margin: 24px 0 18px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mode-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-dim);
+  letter-spacing: 6px;
+  margin-bottom: 16px;
+  font-family: var(--font-cn-serif);
+}
+.mode-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 480px) {
+  .mode-cards { grid-template-columns: 1fr; }
+}
+.mode-card {
+  position: relative;
+  padding: 22px 18px;
+  background: linear-gradient(165deg, rgba(35,40,56,.7), rgba(13,15,20,.85));
+  border: 1.5px solid rgba(232,221,192,.18);
+  border-radius: 18px;
+  cursor: pointer;
+  text-align: left;
+  transition: all .25s cubic-bezier(.25,.8,.25,1);
+  overflow: hidden;
+}
+.mode-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(201,148,26,.08));
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.mode-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-soft);
+  box-shadow: 0 12px 40px -10px rgba(201,148,26,.3);
+}
+.mode-card:hover::before { opacity: 1; }
+.mode-card:active { transform: translateY(0); }
+
+.mode-card.mode-card-full {
+  border-color: rgba(201,148,26,.4);
+  background: linear-gradient(165deg, rgba(42,28,65,.8), rgba(13,15,20,.9));
+}
+.mode-card.mode-card-full:hover {
+  border-color: var(--gold);
+  box-shadow: 0 15px 50px -10px rgba(201,148,26,.5);
+}
+
+.mode-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.mode-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  border-radius: 999px;
+  font-family: var(--font-cn-serif);
+}
+.mode-tag-quick {
+  color: var(--bamboo);
+  background: rgba(111,179,192,.15);
+  border: 1px solid rgba(111,179,192,.4);
+}
+.mode-tag-full {
+  color: var(--gold-soft);
+  background: rgba(201,148,26,.15);
+  border: 1px solid rgba(201,148,26,.5);
+}
+.mode-time {
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 1px;
+}
+
+.mode-count {
+  font-family: var(--font-cn-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold-soft);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(201,148,26,.3);
+}
+.mode-card-full .mode-count {
+  color: var(--gold);
+  font-size: 56px;
+  text-shadow: 0 0 30px rgba(201,148,26,.5);
+}
+.mode-count-unit {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-dim);
+  margin-left: 4px;
+  letter-spacing: 2px;
+}
+
+.mode-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-family: var(--font-cn-serif);
+  margin-bottom: 14px;
+  opacity: .85;
+}
+
+.mode-cta {
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--gold-soft);
+  font-weight: 700;
+  font-family: var(--font-cn-serif);
+  padding-top: 10px;
+  border-top: 1px dashed rgba(201,148,26,.25);
+}
+.mode-card-full .mode-cta {
+  color: var(--gold);
+}
+
 /* =====================================================
    Quiz
    ===================================================== */
@@ -926,6 +1060,16 @@ canvas { display: block; }
   color: var(--theme-glow, var(--gold-soft));
   font-family: var(--font-cn-serif);
   text-shadow: 0 0 20px color-mix(in srgb, var(--theme-glow, var(--gold-soft)) 40%, transparent);
+}
+.match-mode-tag {
+  margin-left: 12px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--ink-dim);
+  border: 1px solid rgba(232,221,192,.2);
+  border-radius: 999px;
+  font-family: var(--font-cn-serif);
 }
 
 /* 人格铭文 */

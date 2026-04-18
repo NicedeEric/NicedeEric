@@ -11,7 +11,8 @@
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
   const DIM_IDS = ["F", "G", "W", "Y", "K", "R", "Z", "M"];
-  const SAMPLE_SIZE = 30;
+  const PER_DIM = 5;                   // questions per dimension
+  const SAMPLE_SIZE = DIM_IDS.length * PER_DIM;   // 8 × 5 = 40 total
   const LETTERS = ["A", "B", "C", "D"];
 
   const screens = {
@@ -35,6 +36,7 @@
   let answers = [];
   let currentQ = 0;
   let lastResult = null;
+  let currentMode = "quick";   // "quick" (40 stratified) or "full" (60 all)
 
   function randomSample(arr, n) {
     const copy = arr.slice();
@@ -43,6 +45,25 @@
       [copy[i], copy[j]] = [copy[j], copy[i]];
     }
     return copy.slice(0, n);
+  }
+
+  /**
+   * Stratified sampling: pick `perDim` questions from each primary_dim,
+   * then shuffle the combined order. Ensures every dimension gets covered
+   * equally (no coverage imbalance that random sampling produces).
+   */
+  function stratifiedSample(pool, perDim) {
+    const buckets = {};
+    for (const q of pool) {
+      const d = q.primary_dim || "_";
+      (buckets[d] = buckets[d] || []).push(q);
+    }
+    let picked = [];
+    for (const d of Object.keys(buckets)) {
+      picked = picked.concat(randomSample(buckets[d], Math.min(perDim, buckets[d].length)));
+    }
+    // shuffle final order for varied flow
+    return randomSample(picked, picked.length);
   }
 
   // ==========================================================
@@ -210,7 +231,14 @@
     animateCounter($("#statQuestions"), POOL.length);
     animateCounter($("#statHeroes"), HEROES.length);
 
-    $("#btnStart").addEventListener("click", startQuiz);
+    // 双模式按钮
+    const btnQuick = $("#btnStartQuick");
+    const btnFull  = $("#btnStartFull");
+    if (btnQuick) btnQuick.addEventListener("click", () => startQuiz("quick"));
+    if (btnFull)  btnFull.addEventListener("click", () => startQuiz("full"));
+    // 兼容旧版单按钮（如果还存在）
+    const btnLegacy = $("#btnStart");
+    if (btnLegacy) btnLegacy.addEventListener("click", () => startQuiz("quick"));
     $("#btnBack").addEventListener("click", goBack);
     $("#btnRestart").addEventListener("click", openRestartConfirm);
     $("#btnConfirmCancel").addEventListener("click", closeRestartConfirm);
@@ -243,10 +271,15 @@
   // ==========================================================
   //  Quiz flow
   // ==========================================================
-  function startQuiz() {
-    // v8: use ALL questions for repeatability (重测信度)
-    // only shuffle order for varied experience
-    QUESTIONS = randomSample(POOL, POOL.length);
+  function startQuiz(mode) {
+    currentMode = mode || "quick";
+    if (currentMode === "full") {
+      // 完整版：用全量 60 题（仅打乱顺序）
+      QUESTIONS = randomSample(POOL, POOL.length);
+    } else {
+      // 快测版：每维分层抽 5 题 = 40 题
+      QUESTIONS = stratifiedSample(POOL, PER_DIM);
+    }
     POOL_BIAS = computePoolBias();
     answers = [];
     currentQ = 0;
@@ -422,6 +455,10 @@
     $("#resWisdom").textContent = hero.wisdom || "";
 
     $("#matchValue").textContent = (matchScore * 100).toFixed(1) + " %";
+    const modeTag = $("#matchModeTag");
+    if (modeTag) {
+      modeTag.textContent = currentMode === "full" ? "完整 60 题" : "快测 40 题";
+    }
 
     // ========= v7: 以"你"为主的人格画像 =========
     if (window.WzryContent) {

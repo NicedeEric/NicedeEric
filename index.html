@@ -8,7 +8,7 @@
 <meta name="description" content="基于 60+ 位历史 / 神话公共领域人物的八维人格测试——看看你和哪位古今英雄灵魂共振。" />
 
 <meta property="og:title" content="古今英雄测 · 你是哪位古今英雄？" />
-<meta property="og:description" content="八维人格 · 60+ 位历史英雄 · 每次随机 30 题。" />
+<meta property="og:description" content="八维人格 · 60+ 位历史英雄 · 每次分层抽 40 题。" />
 <meta property="og:type" content="website" />
 
 <link rel="stylesheet" href="./assets/css/style.css" />
@@ -50,7 +50,7 @@
       <span class="intro-title-zh">古 今 英 雄 测</span>
       <span class="intro-title-en">Which Historical Hero Are You?</span>
     </h1>
-    <p class="intro-sub">八维人格 · 基于 60+ 位历史/神话人物 · 每次随机 30 题</p>
+    <p class="intro-sub">八维人格 · 基于 60+ 位历史/神话人物</p>
 
     <div class="intro-stat">
       <div class="stat-item">
@@ -69,10 +69,33 @@
       </div>
     </div>
 
-    <button class="btn-primary btn-large" id="btnStart">
-      <span>启 程 问 鼎</span>
-      <span class="btn-arrow">→</span>
-    </button>
+    <!-- 双模式选择 -->
+    <div class="mode-selector">
+      <div class="mode-label">· 请 选 择 版 本 ·</div>
+      <div class="mode-cards">
+
+        <button class="mode-card" id="btnStartQuick" data-mode="quick">
+          <div class="mode-card-head">
+            <span class="mode-tag mode-tag-quick">快测版</span>
+            <span class="mode-time">≈ 4 分钟</span>
+          </div>
+          <div class="mode-count">40<span class="mode-count-unit">题</span></div>
+          <div class="mode-desc">每维度抽 5 题<br/>适合第一次体验</div>
+          <div class="mode-cta">开 始 测 试 →</div>
+        </button>
+
+        <button class="mode-card mode-card-full" id="btnStartFull" data-mode="full">
+          <div class="mode-card-head">
+            <span class="mode-tag mode-tag-full">完整版 ⭐</span>
+            <span class="mode-time">≈ 6 分钟</span>
+          </div>
+          <div class="mode-count">60<span class="mode-count-unit">题</span></div>
+          <div class="mode-desc">全题作答<br/>结果最稳，推荐认真测</div>
+          <div class="mode-cta">深 度 测 试 →</div>
+        </button>
+
+      </div>
+    </div>
 
     <p class="intro-foot">匿名参与 · 访问数据保留 30 天</p>
   </div>
@@ -141,6 +164,7 @@
       <div class="match-score-line">
         <span class="match-label">灵魂契合</span>
         <span class="match-value" id="matchValue">—</span>
+        <span class="match-mode-tag" id="matchModeTag">—</span>
       </div>
 
       <div class="result-traits" id="resTraits"></div>
@@ -285,7 +309,7 @@
           <div class="share-bottom-left">
             <div class="share-bottom-title">古今英雄测</div>
             <div class="share-bottom-sub">扫码测你的人格英雄</div>
-            <div class="share-bottom-foot">八维人格 · 60+ 英雄 · 随机 30 题</div>
+            <div class="share-bottom-foot">八维人格 · 60+ 英雄 · 分层 40 题</div>
           </div>
           <div class="share-qr" id="shareQr"></div>
         </div>
